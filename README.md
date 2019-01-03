@@ -94,7 +94,7 @@ If you have questions or need help, we have a support forum for Brightcove's nat
 
 [googlecast]: https://developers.google.com/cast/docs/ios_sender/
 [bcovsdk]: https://github.com/brightcove/brightcove-player-sdk-ios
-[bcovgooglecast]: https://github.com/brightcove/brightcove-player-sdk-ios-google-cast
+[bcovgooglecast]: https://github.com/brightcove/brightcove-player-sdk-ios-googlecast
 [forum]: https://groups.google.com/forum/#!forum/brightcove-native-player-sdks
 
 Delegate Methods
