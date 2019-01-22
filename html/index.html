@@ -44,11 +44,11 @@
 					<div class="section section-overview index-overview">
 						
 						
-						<h1>Google Cast Plugin for Brightcove Player SDK for iOS, version 6.3.12.195</h1>
+						<h1>Google Cast Plugin for Brightcove Player SDK for iOS, version 6.4.0.501</h1>
 
 <h1>Supported Platforms</h1>
 
-<p>iOS 9.0 and above.</p>
+<p>iOS 10.0 and above.</p>
 
 <h1>Installation</h1>
 
@@ -83,14 +83,11 @@ end
 <p>To add the Google Cast Plugin for Brightcove Player SDK to your project manually:</p>
 
 <ol>
-<li>Download the <a href="https://github.com/brightcove/brightcove-player-sdk-ios">Brightcove Player SDK</a> framework.</li>
-<li>Download the <a href="https://github.com/brightcove/brightcove-player-sdk-ios-google-cast">Google Cast Plugin for Brightcove Player SDK</a> framework.</li>
-<li>Download the <a href="https://developers.google.com/cast/docs/developers">Google Cast</a> framework.</li>
-<li>On the &ldquo;General&rdquo; tab of your application target, add the framework, BrightcovePlayerSDK.framework, from the Brightcove Player SDK download to the list of <strong>Embedded Binaries</strong>. The  framework, BrightcovePlayerSDK.framework, is found in the ios directory of the download.</li>
+<li>Follow the <a href="https://developers.google.com/cast/docs/ios_sender/#google_cast_sdk">Google Cast SDK Manual Setup</a> guide.</li>
+<li>Follow the <a href="https://github.com/brightcove/brightcove-player-sdk-ios#ManualInstallation">Brightcove Player SDK Manual Installation</a> guide.</li>
+<li>Download the <a href="https://github.com/brightcove/brightcove-player-sdk-ios-googlecast">Google Cast Plugin for Brightcove Player SDK</a> framework.</li>
 <li>On the &ldquo;General&rdquo; tab of your application target, add BrightcoveGoogleCast.framework from the Google Cast Plugin for Brightcove Player SDK download to the list of <strong>Embedded Binaries</strong>.</li>
-<li>On the &ldquo;General&rdquo; tab of your application target, add GoogleCast.framework from the Google Cast download to the list of <strong>Embedded Binaries</strong>.</li>
 <li>On the &ldquo;Build Settings&rdquo; tab of your application target, ensure that the &ldquo;Framework Search Paths&rdquo; include the paths to the frameworks. This should have been done automatically unless the framework is stored under a different root directory than your project.</li>
-<li>On the &ldquo;Build Settings&rdquo; tab of your application target, ensure that <code>-ObjC</code> has been added to the &ldquo;Other Linker Flags&rdquo; build setting.</li>
 </ol>
 
 
@@ -112,7 +109,7 @@ end
 
 <h1>Quick Start</h1>
 
-<p>The BrightcoveGoogleCast plugin is a bridge between <a href="https://developers.google.com/cast/docs/developers">Google Cast iOS SDK</a> and the <a href="https://github.com/brightcove/brightcove-player-sdk-ios">Brightcove Player SDK for iOS</a>.</p>
+<p>The BrightcoveGoogleCast plugin is a bridge between <a href="https://developers.google.com/cast/docs/ios_sender/">Google Cast iOS SDK</a> and the <a href="https://github.com/brightcove/brightcove-player-sdk-ios">Brightcove Player SDK for iOS</a>.</p>
 
 <p>This snippet shows its basic usage.
 ```
@@ -171,8 +168,21 @@ To take advantage of these events, simply set a delegate on the BCOVGoogleCastMa
 
 <p>There are two properties, in addition to the delegate property, that you can set on the <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> class. These are:</p>
 
-<p><em><code>GCKImage *fallbackPosterImage</code>: The GCKImage that will be used when there is no poster image available for a video.
-</em><code>CGSize posterImageSize</code>: The height and width that you want to use for the GCKImage object image that is created. Defaults to 480h x 720w.</p>
+<ul>
+<li><code>GCKImage *fallbackPosterImage</code>: The GCKImage that will be used when there is no poster image available for a video.</li>
+<li><code>CGSize posterImageSize</code>: The height and width that you want to use for the GCKImage object image that is created. Defaults to 480h x 720w.</li>
+</ul>
+
+
+<h1>Misc</h1>
+
+<ul>
+<li>DRM is not supported when using the Cast plugin with the Google sample receiver app.</li>
+<li>Multiple Audio Tracks are not supported when using the Cast plugin with the Google sample receiver app.</li>
+<li>Client-side and Server-side Advertising is not supported when using the Cast plugin with the Google sample receiver app.</li>
+<li>Live and Live DVR streams are not supported when using the Cast plugin with the Google sample receiver app.</li>
+</ul>
+
 						
 						
 					</div>
@@ -213,7 +223,7 @@ To take advantage of these events, simply set a delegate on the BCOVGoogleCastMa
 					<footer>
 						<div class="footer-copyright">
 							
-							<p class="copyright">Copyright &copy; 2019 Brightcove. All rights reserved. Updated: 2019-01-03</p>
+							<p class="copyright">Copyright &copy; 2019 Brightcove. All rights reserved. Updated: 2019-01-22</p>
 							
 							
 							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

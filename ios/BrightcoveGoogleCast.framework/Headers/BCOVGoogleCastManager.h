@@ -1,9 +1,9 @@
 //
-//  BCOVGoogleCastManager.h
-//  BCOVGoogleCast
+// BCOVGoogleCastManager.h
+// BrightcoveGoogleCast
 //
-//  Copyright © 2018 Brightcove, Inc. All rights reserved.
-//  License: https://accounts.brightcove.com/en/terms-and-conditions
+// Copyright (c) 2019 Brightcove, Inc. All rights reserved.
+// License: https://accounts.brightcove.com/en/terms-and-conditions
 //
 
 #import <BrightcovePlayerSDK/BCOVPlaybackController.h>

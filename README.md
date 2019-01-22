@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.3.12
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.4.0.501
 
 Supported Platforms
 ==========
@@ -39,20 +39,18 @@ Manual
 
 To add the Google Cast Plugin for Brightcove Player SDK to your project manually:
 
-1. Download the [Brightcove Player SDK][bcovsdk] framework.
+1. Follow the [Google Cast SDK Manual Setup][googlecastsdkmanualsetup] guide.
+1. Follow the [Brightcove Player SDK Manual Installation][bcovsdkmanualsetup] guide.
 1. Download the [Google Cast Plugin for Brightcove Player SDK][bcovgooglecast] framework.
-1. Download the [Google Cast][googlecastzip] framework.
-1. On the "General" tab of your application target, add the framework, BrightcovePlayerSDK.framework, from the Brightcove Player SDK download to the list of **Embedded Binaries**. The  framework, BrightcovePlayerSDK.framework, is found in the ios directory of the download.
 1. On the "General" tab of your application target, add BrightcoveGoogleCast.framework from the Google Cast Plugin for Brightcove Player SDK download to the list of **Embedded Binaries**.
-1. On the "General" tab of your application target, add GoogleCast.framework from the Google Cast download to the list of **Embedded Binaries**.
 1. On the "Build Settings" tab of your application target, ensure that the "Framework Search Paths" include the paths to the frameworks. This should have been done automatically unless the framework is stored under a different root directory than your project.
-1. On the "Build Settings" tab of your application target, ensure that `-ObjC` has been added to the "Other Linker Flags" build setting.
 
 Imports
 ----------
 The Google Cast Plugin for Brightcove Player SDK can be imported into code a few different ways; `@import BrightcoveGoogleCast;`, `#import <BrightcoveGoogleCast/BrightcoveGoogleCast.h>` or `#import <BrightcoveGoogleCast/[specific class].h>`. You can import the `GoogleCast` and `BrightcovePlayerSDK` modules in similar fashion.
 
-[googlecastzip]: https://developers.google.com/cast/downloads/GoogleCastSDK-ios-4.3.3_static.zip
+[bcovsdkmanualsetup]: https://github.com/brightcove/brightcove-player-sdk-ios#ManualInstallation
+[googlecastsdkmanualsetup]: https://developers.google.com/cast/docs/ios_sender/#google_cast_sdk
 [cocoapods]: http://cocoapods.org
 [podspecs]: https://github.com/brightcove/BrightcoveSpecs/tree/master/Brightcove-Player-GoogleCast
 [release]: https://github.com/brightcove/brightcove-player-sdk-ios-google-cast/releases
@@ -131,5 +129,12 @@ Customizations
 ==========
 There are two properties, in addition to the delegate property, that you can set on the BCOVGoogleCastManager class. These are:
 
-*`GCKImage *fallbackPosterImage`: The GCKImage that will be used when there is no poster image available for a video.
-*`CGSize posterImageSize`: The height and width that you want to use for the GCKImage object image that is created. Defaults to 480h x 720w.
+* `GCKImage *fallbackPosterImage`: The GCKImage that will be used when there is no poster image available for a video.
+* `CGSize posterImageSize`: The height and width that you want to use for the GCKImage object image that is created. Defaults to 480h x 720w.
+
+Misc
+==========
+* DRM is not supported when using the Cast plugin with the Google sample receiver app.
+* Multiple Audio Tracks are not supported when using the Cast plugin with the Google sample receiver app.
+* Client-side and Server-side Advertising is not supported when using the Cast plugin with the Google sample receiver app.
+* Live and Live DVR streams are not supported when using the Cast plugin with the Google sample receiver app.
