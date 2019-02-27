@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.4.0.501
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.4.1.565
 
 Supported Platforms
 ==========
@@ -97,12 +97,12 @@ If you have questions or need help, we have a support forum for Brightcove's nat
 
 Delegate Methods
 ==========
-The BCOVGoogleCastManager has three delegate methods that you can use to know when major casting-related events have occured. These are:
+BCOVGoogleCastManagerDelegate has four delegate methods that you can use to know when major casting-related events have occured. These are:
 
-* `- (void)switchedToLocalPlayback:(NSTimeInterval)lastKnownStreamPosition`: This method is called when a cast session ends.
-* `- (void)switchedToRemotePlayback`: This method is called when a cast session starts.
-* `- (void)currentCastedVideoDidComplete`: This method is called when a casted video has finished playing.
-* `- (void)suitableSourceNotFound;`: This method is called when no suitable source is found to cast.
+* `- (void)switchedToLocalPlayback:(NSTimeInterval)lastKnownStreamPosition` is called when a cast session ends.
+* `- (void)switchedToRemotePlayback` is called when a cast session starts.
+* `- (void)currentCastedVideoDidComplete` is called when a casted video has finished playing.
+* `- (void)suitableSourceNotFound` is called when no suitable source is found to cast.
 
 To take advantage of these events, simply set a delegate on the BCOVGoogleCastManager singleton. 
 
