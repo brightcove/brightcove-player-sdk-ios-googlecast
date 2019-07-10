@@ -17,7 +17,7 @@
 @protocol BCOVGoogleCastManagerDelegate<NSObject>
 
 
-@property (nonatomic, strong, readonly) id<BCOVPlaybackController> playbackController;
+@property (nonatomic, strong, readonly) id<BCOVPlaybackController> _Nullable playbackController;
 
 @optional
 
