@@ -1,4 +1,10 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.5.0.745
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.6.0.817
+
+Requirements
+============
+
+- Xcode 11.0+
+- ARC
 
 Supported Platforms
 ==========
@@ -8,7 +14,7 @@ Installation
 ==========
 The Google Cast Plugin for Brightcove Player SDK provides a static library framework for installation.
 
-The Google Cast plugin supports version 4.3.3 of the Google Cast SDK for iOS. The Podspec for the Google Cast Plugin for Brightcove Player SDK for iOS references version 4.3.3 of the Google Cast iOS SDK as instructed by the [GoogleCast SDK Release Notes](https://developers.google.com/cast/docs/release-notes#october-22-2018).
+The Google Cast plugin supports version 4.4.5 of the Google Cast SDK for iOS. The Google Cast release notes can be found [here](https://developers.google.com/cast/docs/release-notes).
 
 CocoaPods
 ----------
