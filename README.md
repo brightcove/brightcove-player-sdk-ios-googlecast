@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.6.2.897
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.7.0.912
 
 Requirements
 ============
@@ -138,9 +138,9 @@ There are two properties, in addition to the delegate property, that you can set
 * `GCKImage *fallbackPosterImage`: The GCKImage that will be used when there is no poster image available for a video.
 * `CGSize posterImageSize`: The height and width that you want to use for the GCKImage object image that is created. Defaults to 480h x 720w.
 
-Misc
+Known Issues / Limitations
 ==========
-* DRM is not supported when using the Cast plugin with the Google sample receiver app.
-* Multiple Audio Tracks are not supported when using the Cast plugin with the Google sample receiver app.
-* Client-side and Server-side Advertising is not supported when using the Cast plugin with the Google sample receiver app.
-* Live and Live DVR streams are not supported when using the Cast plugin with the Google sample receiver app.
+* DRM is not supported.
+* Multiple Audio Tracks are not supported.
+* Client-side and Server-side Advertising are not supported.
+* Live and Live DVR streams are not supported.

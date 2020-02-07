@@ -74,11 +74,21 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BCOVGoogleCastManager : NSObject<BCOVPlaybackSessionConsumer>
 
 /**
+ * @warning *Deprecated:* Do not use
  * Returns the Google Cast Manager singleton.
  *
  * @return The Google Cast Manager singleton.
  */
-+ (BCOVGoogleCastManager *)sharedManager;
++ (BCOVGoogleCastManager *)sharedManager __attribute__((deprecated("Use [BCOVGoogleCastManager new] or [[BCOVGoogleCastManager alloc] init] instead.")));
+
+/**
+ * @abstract Resets the state of the BCOVGoogleCastManager instance
+ *
+ * @discussion If using a shared BCOVGoogleCastManager instance across
+ * view controllers you can call this method as needed to clear out data pertaining
+ * to the previously casted video.
+ */
+- (void)prepareForReuse;
 
 /**
  * The delegate object that will receive events from the manager
