@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.7.4.1018
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.7.5.1079
 
 Requirements
 ============
@@ -48,7 +48,7 @@ To add the Google Cast Plugin for Brightcove Player SDK to your project manually
 1. Follow the [Google Cast SDK Manual Setup][googlecastsdkmanualsetup] guide.
 1. Follow the [Brightcove Player SDK Manual Installation][bcovsdkmanualsetup] guide.
 1. Download the [Google Cast Plugin for Brightcove Player SDK][bcovgooglecast] framework.
-1. On the "General" tab of your application target, add BrightcoveGoogleCast.framework from the Google Cast Plugin for Brightcove Player SDK download to the list of **Embedded Binaries**.
+1. On the "General" tab of your application target, add BrightcoveGoogleCast.framework from the Google Cast Plugin for Brightcove Player SDK download to the list of **Frameworks, Libraries, Embedded Content**.
 1. On the "Build Settings" tab of your application target, ensure that the "Framework Search Paths" include the paths to the frameworks. This should have been done automatically unless the framework is stored under a different root directory than your project.
 
 Imports
@@ -56,7 +56,7 @@ Imports
 The Google Cast Plugin for Brightcove Player SDK can be imported into code a few different ways; `@import BrightcoveGoogleCast;`, `#import <BrightcoveGoogleCast/BrightcoveGoogleCast.h>` or `#import <BrightcoveGoogleCast/[specific class].h>`. You can import the `GoogleCast` and `BrightcovePlayerSDK` modules in similar fashion.
 
 [bcovsdkmanualsetup]: https://github.com/brightcove/brightcove-player-sdk-ios#ManualInstallation
-[googlecastsdkmanualsetup]: https://developers.google.com/cast/docs/ios_sender/#google_cast_sdk
+[googlecastsdkmanualsetup]: https://developers.google.com/cast/docs/ios_sender/#manual_setup 
 [cocoapods]: http://cocoapods.org
 [podspecs]: https://github.com/brightcove/BrightcoveSpecs/tree/master/Brightcove-Player-GoogleCast
 [release]: https://github.com/brightcove/brightcove-player-sdk-ios-google-cast/releases
