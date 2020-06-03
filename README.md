@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.7.6.1121
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.7.7.1171
 
 Requirements
 ============
@@ -19,13 +19,13 @@ The Google Cast plugin supports version 4.4.5 of the Google Cast SDK for iOS. Th
 CocoaPods
 ----------
 
-You can use [CocoaPods][cocoapods] to add the Google Cast Plugin for Brightcove Player SDK to your project.  You can find the latest `Brightcove-Player-GoogleCast` podspec [here][podspecs]. The pod will incorporate the correct version of GoogleCast automatically. CocoaPods 1.0 or newer is required.
+You can use [CocoaPods][cocoapods] to add the Google Cast Plugin for Brightcove Player SDK to your project.  You can find the latest Brightcove-Player-GoogleCast podspecs [here][podspecs]. The pod will incorporate the correct version of GoogleCast automatically. CocoaPods 1.0 or newer is required.
 
 CocoaPod Podfile example:
 
-```
-source 'https://github.com/brightcove/BrightcoveSpecs.git'
+```bash
 source 'https://github.com/CocoaPods/Specs'
+source 'https://github.com/brightcove/BrightcoveSpecs.git'
 
 platform :ios, '11.0'
 
@@ -36,9 +36,22 @@ target 'ExampleApp' do
 end
 ```
 
-When updating your installation, it's a good idea to refresh the local copy of your BrightcoveSpecs repository so that you have the latest podspecs locally, just like you would update your CococaPods master repository.
+Installing Brightcove-Player-GoogleCast automatically installs the dependency, Brightcove-Player-Core. Based on your needs, you may choose to include either the dynamic Brightcove-Player-Core framework, or the static one. By default, the dynamic Core framework is installed. To choose the static Core framework, your Podfile would look something like this:
 
-Typically if you use `pod update` in Terminal this will happen automatically, or alternatively you can update explicitly with `pod repo update brightcove`. (Your BrightcoveSpecs repository may have a different name if you explicitly added it to your list of podspecs repos.)
+```bash
+source 'https://github.com/CocoaPods/Specs'
+source 'https://github.com/brightcove/BrightcoveSpecs.git'
+
+platform :ios, '11.0'
+
+use_frameworks!
+
+target 'ExampleApp' do
+    pod 'Brightcove-Player-GoogleCast-static'
+end
+```
+
+When updating your installation, it's a good idea to refresh the local copy of your BrightcoveSpecs repository to ensure you have the latest podspecs locally, just like you would update your CococaPods master repository. Use `pod repo update` to do so.
 
 Manual
 ----------
@@ -59,6 +72,7 @@ The Google Cast Plugin for Brightcove Player SDK can be imported into code a few
 [googlecastsdkmanualsetup]: https://developers.google.com/cast/docs/ios_sender/#manual_setup 
 [cocoapods]: http://cocoapods.org
 [podspecs]: https://github.com/brightcove/BrightcoveSpecs/tree/master/Brightcove-Player-GoogleCast
+[podspecs-static]: https://github.com/brightcove/BrightcoveSpecs/tree/master/Brightcove-Player-GoogleCast-Static
 [release]: https://github.com/brightcove/brightcove-player-sdk-ios-google-cast/releases
 
 Before You Begin
@@ -80,6 +94,7 @@ Quick Start
 The BrightcoveGoogleCast plugin is a bridge between [Google Cast iOS SDK][googlecast] and the [Brightcove Player SDK for iOS][bcovsdk]. 
 
 This snippet shows its basic usage.
+
 ```
     [1] BCOVGoogleCastManager *castManager = [BCOVGoogleCastManager sharedManager];
 
