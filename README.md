@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.7.8.1200
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.7.9.1212
 
 Requirements
 ============
@@ -96,11 +96,11 @@ The BrightcoveGoogleCast plugin is a bridge between [Google Cast iOS SDK][google
 This snippet shows its basic usage.
 
 ```
-    [1] BCOVGoogleCastManager *castManager = [BCOVGoogleCastManager sharedManager];
+    [1] self.googleCastManager = [BCOVGoogleCastManager new];
 
     [2] id<BCOVPlaybackController> playbackController = [BCOVPlayerSDKManager.sharedManager createPlaybackController];
 
-    [3] [playbackController addSessionConsumer:self.castManager];
+    [3] [playbackController addSessionConsumer:self.googleCastManager];
 ```
 
 Breaking the code down into steps:
@@ -128,7 +128,7 @@ BCOVGoogleCastManagerDelegate has four delegate methods that you can use to know
 To take advantage of these events, simply set a delegate on the BCOVGoogleCastManager singleton. 
 
 ```
-    [BCOVGoogleCastManager sharedManager].delegate = self;
+    self.googleCastManager.delegate = self;
 ```
 
 Source Selection
