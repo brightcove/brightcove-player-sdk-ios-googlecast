@@ -8,7 +8,7 @@
 
 #import <BrightcovePlayerSDK/BCOVPlaybackController.h>
 
-@class GCKUICastButton, GCKImage;
+@class GCKUICastButton, GCKImage, GCKMediaInformationBuilder, BCOVSource, GCKMediaLoadOptions;
 
 /**
  * Conform to this protocol to receive information about the state
@@ -66,6 +66,43 @@
  * source types. If no HTTP versions are found this method will be called.
  */
 - (void)suitableSourceNotFound;
+
+/**
+ * @discussion This method is called prior to calling `build` on the current
+ * instance of GCKMediaInformationBuilder set up for the current video about
+ * to be cast. This will allow you to add any additional values to the builder as needed.
+ */
+- (void)willBuildMediaInformationBuilder:(GCKMediaInformationBuilder *_Nonnull)builder;
+
+/**
+ * @abstract This method is called prior invoking `loadMedia:withOptions` on
+ * the current cast session's remoteMediaClient.
+ *
+ * @discussion You can use this delegate method to further configure GCKMediaLoadOptions
+ * as needed prior to it being sent fo the remoteMediaClient.
+ */
+- (void)willSendMediaLoadOptions:(GCKMediaLoadOptions *_Nonnull)mediaLoadOptions;
+
+/**
+ * @abstract This method is called when a source needs to be parsed prior to casting.
+ *
+ * @discussion You can use this method to specify the source you want to be used
+ * with the Cast Receiver.
+ * If you do not implement this method, BCOVGoogleCastManager
+ * will perform source selecton on its own (see `suitiableSourceNotFound` for more information).
+*/
+- (BCOVSource *_Nonnull)useSourceFromSources:(NSArray<BCOVSource *> *_Nonnull)sources;
+
+/**
+ * @abstract This method is called after BCOVGoogleCastManager has
+ * received a new playback session.
+ *
+ * @discussion When BCOVGoogleCastManager receives a new BCOVVideo from a playback
+ * session it will attempt to compare it to the previous BCOVVideo, if there is one, to prevent the cast
+ * session from restarting with the same video. You can use this method to override the internal check
+ * so that you have control over if the current video should be cast or not.
+ */
+-(BOOL)shouldCastVideo:(BCOVVideo *_Nonnull)video;
 
 @end
 
