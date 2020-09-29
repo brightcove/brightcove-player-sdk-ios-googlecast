@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.7.11.1278
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.8.0.1318
 
 Requirements
 ============
@@ -14,7 +14,7 @@ Installation
 ==========
 The Google Cast Plugin for Brightcove Player SDK provides a static library framework for installation.
 
-The Google Cast plugin supports version 4.4.5 of the Google Cast SDK for iOS. The Google Cast release notes can be found [here](https://developers.google.com/cast/docs/release-notes).
+The Google Cast plugin supports version 4.5.0 of the Google Cast SDK for iOS. The Google Cast release notes can be found [here](https://developers.google.com/cast/docs/release-notes).
 
 CocoaPods
 ----------
@@ -116,6 +116,27 @@ If you have questions or need help, we have a support forum for Brightcove's nat
 [bcovgooglecast]: https://github.com/brightcove/brightcove-player-sdk-ios-googlecast
 [forum]: https://groups.google.com/forum/#!forum/brightcove-native-player-sdks
 
+Brightcove CAF Receiver
+==========
+
+The application ID for the Brightcove CAF Receiver is `341387A3` and is assigned to the constant `kBCOVCAFReceiverApplicationID`. You can verify the application ID by checking the [CAF Receiver config.json](https://players.brightcove.net/videojs-chromecast-receiver/2/config.json).
+
+If you are using the Brightcove CAF Receiver you'll need to initialize these variables like this:
+
+```
+[1] BCOVReceiverAppConfig *receiverAppConfig = [BCOVReceiverAppConfig new];
+    receiverAppConfig.accountId = kAccountID;
+    receiverAppConfig.policyKey = kServicePolicyKey;
+
+[2] self.googleCastManager = [[BCOVGoogleCastManager alloc] initForBrightcoveReceiverApp:receiverAppConfig];
+```
+
+The following properties are also available to set on `BCOVReceiverAppConfig` as needed:
+* authToken (for use with PAS/EPA)
+* adConfigId (for use with SSAI)
+* userId (for use with analytics tracking)
+* applicationId (for use with analytics tracking)
+
 Delegate Methods
 ==========
 BCOVGoogleCastManagerDelegate has four delegate methods that you can use to know when major casting-related events have occured. These are:
@@ -155,7 +176,14 @@ There are two properties, in addition to the delegate property, that you can set
 
 Known Issues / Limitations
 ==========
+
+## When using a default, unmodified receiver (including the demo receiver) the following limitations apply:
+
 * DRM is not supported.
 * Multiple Audio Tracks are not supported.
 * Client-side and Server-side Advertising are not supported.
 * Live and Live DVR streams are not supported.
+
+## When using the Brightcove CAF receiver the following limitations apply:
+
+* Client-side Advertising is not supported.

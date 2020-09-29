@@ -8,6 +8,11 @@
 
 #import <BrightcovePlayerSDK/BCOVPlaybackController.h>
 
+/**
+ * The application ID of the Brightcove CAF Receiver
+ */
+extern NSString * _Nonnull const kBCOVCAFReceiverApplicationID;
+
 @class GCKUICastButton, GCKImage, GCKMediaInformationBuilder, BCOVSource, GCKMediaLoadOptions;
 
 /**

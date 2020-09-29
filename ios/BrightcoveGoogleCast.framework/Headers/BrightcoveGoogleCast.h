@@ -7,3 +7,4 @@
 //
 
 #import <BrightcoveGoogleCast/BCOVGoogleCastManager.h>
+#import <BrightcoveGoogleCast/BCOVReceiverAppConfig.h>
