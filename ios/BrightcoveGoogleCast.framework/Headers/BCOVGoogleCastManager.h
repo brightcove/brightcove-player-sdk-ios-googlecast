@@ -75,7 +75,9 @@ extern NSString * _Nonnull const kBCOVCAFReceiverApplicationID;
 /**
  * @discussion This method is called prior to calling `build` on the current
  * instance of GCKMediaInformationBuilder set up for the current video about
- * to be cast. This will allow you to add any additional values to the builder as needed.
+ * to be cast. This will allow you to add any additional values to the builder
+ * as needed. You can use this method to pass custom data to the builder in
+ * your receiver app.
  */
 - (void)willBuildMediaInformationBuilder:(GCKMediaInformationBuilder *_Nonnull)builder;
 
