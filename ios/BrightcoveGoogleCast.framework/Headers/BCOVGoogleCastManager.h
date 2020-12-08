@@ -142,6 +142,12 @@ NS_ASSUME_NONNULL_BEGIN
  * image that is created. Defaults to 480h x 720w
  */
 @property (nonatomic, assign) CGSize posterImageSize;
+/**
+ * Whether to use a language variant, if available, with GCKMediaMetadata
+ *
+ * Defaults to YES
+ */
+@property (nonatomic, assign) BOOL useLocalizedVariantForCastMediaMedadata;
 
 @end
 

@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.8.1.1355
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.8.2.1421
 
 Requirements
 ============
@@ -109,12 +109,9 @@ Breaking the code down into steps:
 1. Create an instance of BCOVPlaybackController to use.
 1. Add your BCOVGoogleCastManager reference as a session consumer to your BCOVPlaybackController instance.
 
-If you have questions or need help, we have a support forum for Brightcove's native Player SDKs at [https://groups.google.com/forum/#!forum/brightcove-native-player-sdks][forum] .
-
 [googlecast]: https://developers.google.com/cast/docs/ios_sender/
 [bcovsdk]: https://github.com/brightcove/brightcove-player-sdk-ios
 [bcovgooglecast]: https://github.com/brightcove/brightcove-player-sdk-ios-googlecast
-[forum]: https://groups.google.com/forum/#!forum/brightcove-native-player-sdks
 
 Brightcove CAF Receiver
 ==========
@@ -187,3 +184,8 @@ Known Issues / Limitations
 ## When using the Brightcove CAF receiver the following limitations apply:
 
 * Client-side Advertising is not supported.
+
+Support
+=======
+If you have questions, need help or want to provide feedback, please use the [Support Portal](https://supportportal.brightcove.com/s/login/) or contact your Account Manager.  To receive notification of new SDK software releases, subscribe to the Brightcove Native Player SDKs [Google Group](https://groups.google.com/g/brightcove-native-player-sdks).
+
