@@ -45,10 +45,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *applicationId;
 
 /**
- * When unspecified this will point to the local player that will play your videos.
- * Supplying this option will force the receiver to load a specific player rather than
- * the local player currently playing the video. This is useful when you want specific
- * player code to only run on the chromecast.
+ * If unspecified, the Brightcove v2.x receiver app will play a cast video using
+ * a default Web player. Set the playerUrl string property to cause the Brightcove
+ * v2.x receiver app to play using a different Web player.
 */
 @property (nonatomic, copy, nullable) NSString *playerUrl;
 
