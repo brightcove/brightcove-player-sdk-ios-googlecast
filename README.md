@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.8.5.1519
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.8.6.1579
 
 Requirements
 ============
@@ -129,6 +129,8 @@ If you are using the Brightcove CAF Receiver you'll need to initialize these var
 ```
 
 The following properties are also available to set on `BCOVReceiverAppConfig` as needed:
+* splashScreen (for customizing the splash screen image)
+* playerUrl (for using a customized player)
 * authToken (for use with PAS/EPA)
 * adConfigId (for use with SSAI)
 * userId (for use with analytics tracking)
