@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.8.7.1605
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.9.0.1697
 
 Requirements
 ============
@@ -129,23 +129,30 @@ If you are using the Brightcove CAF Receiver you'll need to initialize these var
 ```
 
 The following properties are also available to set on `BCOVReceiverAppConfig` as needed:
+
 * splashScreen (for customizing the splash screen image)
 * playerUrl (for using a customized player)
 * authToken (for use with PAS/EPA)
+* watermarkingToken (for use with Forensic Watermaking)
 * adConfigId (for use with SSAI)
 * userId (for use with analytics tracking)
 * applicationId (for use with analytics tracking)
 
 Delegate Methods
 ==========
-BCOVGoogleCastManagerDelegate has four delegate methods that you can use to know when major casting-related events have occured. These are:
+BCOVGoogleCastManagerDelegate has delegate methods you can use to be notified when major cast-related events have occurred or are about to occur, for example
 
-* `- (void)switchedToLocalPlayback:(NSTimeInterval)lastKnownStreamPosition` is called when a cast session ends.
-* `- (void)switchedToRemotePlayback` is called when a cast session starts.
-* `- (void)currentCastedVideoDidComplete` is called when a casted video has finished playing.
-* `- (void)suitableSourceNotFound` is called when no suitable source is found to cast.
+* `- (void)switchedToLocalPlayback:(NSTimeInterval)lastKnownStreamPosition;`
+* `- (void)switchedToRemotePlayback;`
+* `- (void)currentCastedVideoDidComplete;`
+* `- (void)castedVideoFailedToPlay;`
+* `- (void)suitableSourceNotFound;`
+* `- (void)willBuildMediaInformationBuilder:(GCKMediaInformationBuilder *_Nonnull);`
+* `- (void)willSendMediaLoadOptions:(GCKMediaLoadOptions *_Nonnull);`
 
-To take advantage of these events, simply set a delegate on the BCOVGoogleCastManager singleton. 
+For a complete list with descriptions, refer to the [BCOVGoogeCastManagerDelegate Protocol Reference](https://docs.brightcove.com/ios-plugins/googlecast/Protocols/BCOVGoogleCastManagerDelegate.html).
+
+To take advantage of these events, set a delegate on the BCOVGoogleCastManager singleton. 
 
 ```
     self.googleCastManager.delegate = self;

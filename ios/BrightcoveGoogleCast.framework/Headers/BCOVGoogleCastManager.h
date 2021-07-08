@@ -47,18 +47,18 @@ extern NSString * _Nonnull const kBCOVCAFReceiverApplicationID;
 - (void)switchedToRemotePlayback;
 
 /**
- * @abstract This method is called when a casted video has finished playing.
+ * @abstract This method is called when a cast video has finished playing.
  *
  * @discussion You can use this to show/hide UI elements, or trigger
- * other events, once a casted video has completed playback
+ * other events, once a cast video has completed playback
  */
 - (void)currentCastedVideoDidComplete;
 
 /**
- * @abstract This method is called when a casted video fails to play.
+ * @abstract This method is called when a cast video fails to play.
  *
  * @discussion You can use this to show/hide UI elements, or trigger
- * other events, once a casted video fails to play
+ * other events, once a cast video fails to play
  */
 - (void)castedVideoFailedToPlay;
 
@@ -91,7 +91,7 @@ extern NSString * _Nonnull const kBCOVCAFReceiverApplicationID;
 - (void)willSendMediaLoadOptions:(GCKMediaLoadOptions *_Nonnull)mediaLoadOptions;
 
 /**
- * @abstract This method is called when a source needs to be parsed prior to casting.
+ * @abstract This method is called when a source needs to be parsed prior to being cast.
  *
  * @discussion You can use this method to specify the source you want to be used
  * with the Cast Receiver.
@@ -122,7 +122,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @discussion If using a shared BCOVGoogleCastManager instance across
  * view controllers you can call this method as needed to clear out data pertaining
- * to the previously casted video.
+ * to the previously cast video.
  */
 - (void)prepareForReuse;
 

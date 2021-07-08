@@ -30,6 +30,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *authToken;
 
 /**
+ * The watermarking token for use with Forensic Watermarking
+ */
+@property (nonatomic, copy, nullable) NSString *watermarkingToken;
+
+/**
  * Provided for ssai ad setups
  */
 @property (nonatomic, copy, nullable) NSString *adConfigId;
