@@ -44,7 +44,7 @@
 					<div class="section section-overview index-overview">
 						
 						
-						<h1>Google Cast Plugin for Brightcove Player SDK for iOS, version 6.9.1.1726</h1>
+						<h1>Google Cast Plugin for Brightcove Player SDK for iOS, version 6.10.0.1786</h1>
 
 <h1>Requirements</h1>
 
@@ -62,7 +62,7 @@
 
 <p>The Google Cast Plugin for Brightcove Player SDK provides a static library framework for installation.</p>
 
-<p>The Google Cast plugin supports version 4.5.0 of the Google Cast SDK for iOS. The Google Cast release notes can be found <a href="https://developers.google.com/cast/docs/release-notes">here</a>.</p>
+<p>The Google Cast plugin supports version 4.6.1 of the Google Cast SDK for iOS. The Google Cast release notes can be found <a href="https://developers.google.com/cast/docs/release-notes">here</a>.</p>
 
 <h2>CocoaPods</h2>
 
@@ -98,6 +98,19 @@ source &lsquo;https://github.com/brightcove/BrightcoveSpecs.git&rsquo;</p>
 end
 ```</p>
 
+<p>New subspecs have been added to support <code>no-bluetooth</code> version of Google Cast SDK and XCFramework.
+The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) to be used and the second is the distribution package (Framework or XCFramework) for the plugin. Bluetooth and Framework are the default subspecs for <code>BrightcoveGoogleCast</code> plugin.</p>
+
+<p><code>bash
+  pod 'Brightcove-Player-GoogleCast'                          # Bluetooth and Framework
+  pod 'Brightcove-Player-GoogleCast/Bluetooth'                # Bluetooth and Framework
+  pod 'Brightcove-Player-GoogleCast/Bluetooth/Framework'      # Bluetooth and Framework
+  pod 'Brightcove-Player-GoogleCast/Bluetooth/XCFramework'    # Bluetooth and XCFramework
+  pod 'Brightcove-Player-GoogleCast/No-Bluetooth'             # No-Bluetooth and Framework
+  pod 'Brightcove-Player-GoogleCast/No-Bluetooth/Framework'   # No-Bluetooth and Framework
+  pod 'Brightcove-Player-GoogleCast/No-Bluetooth/XCFramework' # No-Bluetooth and XCFramework
+</code></p>
+
 <p>When updating your installation, it&rsquo;s a good idea to refresh the local copy of your BrightcoveSpecs repository to ensure you have the latest podspecs locally, just like you would update your CococaPods master repository. Use <code>pod repo update</code> to do so.</p>
 
 <h2>Manual</h2>
@@ -108,8 +121,15 @@ end
 <li>Follow the <a href="https://developers.google.com/cast/docs/ios_sender/#manual_setup">Google Cast SDK Manual Setup</a> guide.</li>
 <li>Follow the <a href="https://github.com/brightcove/brightcove-player-sdk-ios#ManualInstallation">Brightcove Player SDK Manual Installation</a> guide.</li>
 <li>Download the <a href="https://github.com/brightcove/brightcove-player-sdk-ios-googlecast">Google Cast Plugin for Brightcove Player SDK</a> framework.</li>
-<li>On the &ldquo;General&rdquo; tab of your application target, add BrightcoveGoogleCast.framework from the Google Cast Plugin for Brightcove Player SDK download to the list of <strong>Frameworks, Libraries, Embedded Content</strong>.</li>
+<li>On the &ldquo;General&rdquo; tab of your application target, add <code>BrightcoveGoogleCast.framework</code> or <code>BrightcoveGoogleCast.xcframework</code> from the Google Cast Plugin for Brightcove Player SDK download to the list of <strong>Frameworks, Libraries, Embedded Content</strong>.</li>
 <li>On the &ldquo;Build Settings&rdquo; tab of your application target, ensure that the &ldquo;Framework Search Paths&rdquo; include the paths to the frameworks. This should have been done automatically unless the framework is stored under a different root directory than your project.</li>
+<li>(<strong>Universal Framework</strong> only) On the &ldquo;Build Phases&rdquo; tab, add a &ldquo;Run Script&rdquo; phase with the command <code>bash ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightcoveGoogleCast.framework/strip-frameworks.sh</code>. Check &ldquo;Run script only when installing&rdquo;. This will remove unneeded architectures from the build, which is important for App Store submission.</li>
+<li>(<strong>Apple Silicon with Universal Framework</strong> only) On the &ldquo;Build Settings&rdquo; tab of your application target:
+
+<ul>
+<li>Ensure that <code>arm64</code> has been added to your &ldquo;Excluded Architectures&rdquo; build setting for <code>Any iOS Simulator SDK</code>.</li>
+</ul>
+</li>
 </ol>
 
 
@@ -145,9 +165,9 @@ end
 <p>Breaking the code down into steps:</p>
 
 <ol>
-<li>Create a reference to the <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> singleton.</li>
+<li>Create a reference to the BCOVGoogleCastManager singleton.</li>
 <li>Create an instance of BCOVPlaybackController to use.</li>
-<li>Add your <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> reference as a session consumer to your BCOVPlaybackController instance.</li>
+<li>Add your BCOVGoogleCastManager reference as a session consumer to your BCOVPlaybackController instance.</li>
 </ol>
 
 
@@ -164,7 +184,7 @@ end
 [2] self.googleCastManager = [[BCOVGoogleCastManager alloc] initForBrightcoveReceiverApp:receiverAppConfig];
 </code></pre>
 
-<p>The following properties are also available to set on <a href="Classes/BCOVReceiverAppConfig.html"><code>BCOVReceiverAppConfig</code></a> as needed:</p>
+<p>The following properties are also available to set on <code>BCOVReceiverAppConfig</code> as needed:</p>
 
 <ul>
 <li>splashScreen (for customizing the splash screen image)</li>
@@ -179,7 +199,7 @@ end
 
 <h1>Delegate Methods</h1>
 
-<p><a href="Protocols/BCOVGoogleCastManagerDelegate.html">BCOVGoogleCastManagerDelegate</a> has delegate methods you can use to be notified when major cast-related events have occurred or are about to occur, for example</p>
+<p>BCOVGoogleCastManagerDelegate has delegate methods you can use to be notified when major cast-related events have occurred or are about to occur, for example</p>
 
 <ul>
 <li><code>- (void)switchedToLocalPlayback:(NSTimeInterval)lastKnownStreamPosition;</code></li>
@@ -194,7 +214,7 @@ end
 
 <p>For a complete list with descriptions, refer to the <a href="https://docs.brightcove.com/ios-plugins/googlecast/Protocols/BCOVGoogleCastManagerDelegate.html">BCOVGoogeCastManagerDelegate Protocol Reference</a>.</p>
 
-<p>To take advantage of these events, set a delegate on the <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> singleton.</p>
+<p>To take advantage of these events, set a delegate on the BCOVGoogleCastManager singleton.</p>
 
 <pre><code>    self.googleCastManager.delegate = self;
 </code></pre>
@@ -291,7 +311,7 @@ end
 					<footer>
 						<div class="footer-copyright">
 							
-							<p class="copyright">Copyright &copy; 2021 Brightcove. All rights reserved. Updated: 2021-08-16</p>
+							<p class="copyright">Copyright &copy; 2021 Brightcove. All rights reserved. Updated: 2021-09-27</p>
 							
 							
 							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

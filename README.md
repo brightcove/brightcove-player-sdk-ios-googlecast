@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.9.1.1726
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.10.0.1786
 
 Requirements
 ============
@@ -14,7 +14,7 @@ Installation
 ==========
 The Google Cast Plugin for Brightcove Player SDK provides a static library framework for installation.
 
-The Google Cast plugin supports version 4.5.0 of the Google Cast SDK for iOS. The Google Cast release notes can be found [here](https://developers.google.com/cast/docs/release-notes).
+The Google Cast plugin supports version 4.6.1 of the Google Cast SDK for iOS. The Google Cast release notes can be found [here](https://developers.google.com/cast/docs/release-notes).
 
 CocoaPods
 ----------
@@ -51,6 +51,19 @@ target 'ExampleApp' do
 end
 ```
 
+New subspecs have been added to support `no-bluetooth` version of Google Cast SDK and XCFramework.
+The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) to be used and the second is the distribution package (Framework or XCFramework) for the plugin. Bluetooth and Framework are the default subspecs for `BrightcoveGoogleCast` plugin.
+
+```bash
+  pod 'Brightcove-Player-GoogleCast'                          # Bluetooth and Framework
+  pod 'Brightcove-Player-GoogleCast/Bluetooth'                # Bluetooth and Framework
+  pod 'Brightcove-Player-GoogleCast/Bluetooth/Framework'      # Bluetooth and Framework
+  pod 'Brightcove-Player-GoogleCast/Bluetooth/XCFramework'    # Bluetooth and XCFramework
+  pod 'Brightcove-Player-GoogleCast/No-Bluetooth'             # No-Bluetooth and Framework
+  pod 'Brightcove-Player-GoogleCast/No-Bluetooth/Framework'   # No-Bluetooth and Framework
+  pod 'Brightcove-Player-GoogleCast/No-Bluetooth/XCFramework' # No-Bluetooth and XCFramework
+```
+
 When updating your installation, it's a good idea to refresh the local copy of your BrightcoveSpecs repository to ensure you have the latest podspecs locally, just like you would update your CococaPods master repository. Use `pod repo update` to do so.
 
 Manual
@@ -61,8 +74,12 @@ To add the Google Cast Plugin for Brightcove Player SDK to your project manually
 1. Follow the [Google Cast SDK Manual Setup][googlecastsdkmanualsetup] guide.
 1. Follow the [Brightcove Player SDK Manual Installation][bcovsdkmanualsetup] guide.
 1. Download the [Google Cast Plugin for Brightcove Player SDK][bcovgooglecast] framework.
-1. On the "General" tab of your application target, add BrightcoveGoogleCast.framework from the Google Cast Plugin for Brightcove Player SDK download to the list of **Frameworks, Libraries, Embedded Content**.
+1. On the "General" tab of your application target, add `BrightcoveGoogleCast.framework` or `BrightcoveGoogleCast.xcframework` from the Google Cast Plugin for Brightcove Player SDK download to the list of **Frameworks, Libraries, Embedded Content**.
 1. On the "Build Settings" tab of your application target, ensure that the "Framework Search Paths" include the paths to the frameworks. This should have been done automatically unless the framework is stored under a different root directory than your project.
+1. (**Universal Framework** only) On the "Build Phases" tab, add a "Run Script" phase with the command `bash ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightcoveGoogleCast.framework/strip-frameworks.sh`. Check "Run script only when installing". This will remove unneeded architectures from the build, which is important for App Store submission.
+1. (**Apple Silicon with Universal Framework** only) On the "Build Settings" tab of your application target:
+    * Ensure that `arm64` has been added to your "Excluded Architectures" build setting for `Any iOS Simulator SDK`.
+
 
 Imports
 ----------
