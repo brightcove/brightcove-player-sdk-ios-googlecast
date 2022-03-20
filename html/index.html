@@ -44,29 +44,17 @@
 					<div class="section section-overview index-overview">
 						
 						
-						<h1>Google Cast Plugin for Brightcove Player SDK for iOS, version 6.10.2.1847</h1>
+						<h1>Google Cast Plugin for Brightcove Player SDK for iOS, version 6.10.3.2003</h1>
 
-<h1>Requirements</h1>
-
-<ul>
-<li>Xcode 11.0+</li>
-<li>ARC</li>
-</ul>
-
-
-<h1>Supported Platforms</h1>
-
-<p>iOS 11.0 and above.</p>
-
-<h1>Installation</h1>
+<h2>Installation</h2>
 
 <p>The Google Cast Plugin for Brightcove Player SDK provides a static library framework for installation.</p>
 
 <p>The Google Cast plugin supports version 4.6.1 of the Google Cast SDK for iOS. The Google Cast release notes can be found <a href="https://developers.google.com/cast/docs/release-notes">here</a>.</p>
 
-<h2>CocoaPods</h2>
+<h3>CocoaPods</h3>
 
-<p>You can use <a href="http://cocoapods.org">CocoaPods</a> to add the Google Cast Plugin for Brightcove Player SDK to your project.  You can find the latest Brightcove-Player-GoogleCast podspecs <a href="https://github.com/brightcove/BrightcoveSpecs/tree/master/Brightcove-Player-GoogleCast">here</a>. The pod will incorporate the correct version of GoogleCast automatically. CocoaPods 1.0 or newer is required.</p>
+<p>You can use <a href="http://cocoapods.org">CocoaPods</a> to add the Google Cast Plugin for Brightcove Player SDK to your project.  You can find the latest Brightcove-Player-GoogleCast podspecs <a href="https://github.com/brightcove/BrightcoveSpecs/tree/master/Brightcove-Player-GoogleCast">here</a>. The pod will incorporate the correct version of GoogleCast automatically.</p>
 
 <p>CocoaPod Podfile example:</p>
 
@@ -113,7 +101,7 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 
 <p>When updating your installation, it&rsquo;s a good idea to refresh the local copy of your BrightcoveSpecs repository to ensure you have the latest podspecs locally, just like you would update your CococaPods master repository. Use <code>pod repo update</code> to do so.</p>
 
-<h2>Manual</h2>
+<h3>Manual</h3>
 
 <p>To add the Google Cast Plugin for Brightcove Player SDK to your project manually:</p>
 
@@ -133,11 +121,11 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 </ol>
 
 
-<h2>Imports</h2>
+<h3>Imports</h3>
 
 <p>The Google Cast Plugin for Brightcove Player SDK can be imported into code a few different ways; <code>@import BrightcoveGoogleCast;</code>, <code>#import &lt;BrightcoveGoogleCast/BrightcoveGoogleCast.h&gt;</code> or <code>#import &lt;BrightcoveGoogleCast/[specific class].h&gt;</code>. You can import the <code>GoogleCast</code> and <code>BrightcovePlayerSDK</code> modules in similar fashion.</p>
 
-<h1>Before You Begin</h1>
+<h2>Before You Begin</h2>
 
 <p>Before attempting to utilize this plugin you should already be familiar with the following:</p>
 
@@ -149,7 +137,7 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 </ul>
 
 
-<h1>Quick Start</h1>
+<h2>Quick Start</h2>
 
 <p>The BrightcoveGoogleCast plugin is a bridge between <a href="https://developers.google.com/cast/docs/ios_sender/">Google Cast iOS SDK</a> and the <a href="https://github.com/brightcove/brightcove-player-sdk-ios">Brightcove Player SDK for iOS</a>.</p>
 
@@ -171,7 +159,7 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 </ol>
 
 
-<h1>Brightcove CAF Receiver</h1>
+<h2>Brightcove CAF Receiver</h2>
 
 <p>The application ID for the Brightcove CAF Receiver is <code>341387A3</code> and is assigned to the constant <code>kBCOVCAFReceiverApplicationID</code>. You can verify the application ID by checking the <a href="https://players.brightcove.net/videojs-chromecast-receiver/2/config.json">CAF Receiver config.json</a>.</p>
 
@@ -197,7 +185,7 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 </ul>
 
 
-<h1>Delegate Methods</h1>
+<h2>Delegate Methods</h2>
 
 <p>BCOVGoogleCastManagerDelegate has delegate methods you can use to be notified when major cast-related events have occurred or are about to occur, for example</p>
 
@@ -219,7 +207,7 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 <pre><code>    self.googleCastManager.delegate = self;
 </code></pre>
 
-<h1>Source Selection</h1>
+<h2>Source Selection</h2>
 
 <p>The <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> will attempt to find a suitable source to use. It will look for sources in this order:</p>
 
@@ -237,7 +225,7 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 
 <p>Your Video Cloud account will need to be set up to support HLS v3, ensure that DASH is enabled or have an MP4 source available for each video.</p>
 
-<h1>Customizations</h1>
+<h2>Customizations</h2>
 
 <p>There are two properties, in addition to the delegate property, that you can set on the <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> class. These are:</p>
 
@@ -247,9 +235,9 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 </ul>
 
 
-<h1>Known Issues / Limitations</h1>
+<h2>Known Issues / Limitations</h2>
 
-<h2>When using a default, unmodified receiver (including the demo receiver) the following limitations apply:</h2>
+<h3>When using a default, unmodified receiver (including the demo receiver) the following limitations apply:</h3>
 
 <ul>
 <li>DRM is not supported.</li>
@@ -259,14 +247,14 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 </ul>
 
 
-<h2>When using the Brightcove CAF receiver the following limitations apply:</h2>
+<h3>When using the Brightcove CAF receiver the following limitations apply:</h3>
 
 <ul>
 <li>Client-side Advertising is not supported.</li>
 </ul>
 
 
-<h1>Support</h1>
+<h2>Support</h2>
 
 <p>If you have questions, need help or want to provide feedback, please use the <a href="https://supportportal.brightcove.com/s/login/">Support Portal</a> or contact your Account Manager.  To receive notification of new SDK software releases, subscribe to the Brightcove Native Player SDKs <a href="https://groups.google.com/g/brightcove-native-player-sdks">Google Group</a>.</p>
 						
@@ -311,7 +299,7 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 					<footer>
 						<div class="footer-copyright">
 							
-							<p class="copyright">Copyright &copy; 2021 Brightcove. All rights reserved. Updated: 2021-11-18</p>
+							<p class="copyright">Copyright &copy; 2022 Brightcove. All rights reserved. Updated: 2022-03-17</p>
 							
 							
 							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
