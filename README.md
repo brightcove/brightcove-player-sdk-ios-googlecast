@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.10.4.2043
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.10.5.2109
 
 ## Installation
 
@@ -68,6 +68,15 @@ To add the Google Cast Plugin for Brightcove Player SDK to your project manually
 1. (**Apple Silicon with Universal Framework** only) On the "Build Settings" tab of your application target:
     * Ensure that `arm64` has been added to your "Excluded Architectures" build setting for `Any iOS Simulator SDK`.
 
+### Swift Package Manager
+
+To add the Google Cast Plugin for Brightcove Player SDK to your project with Swift Package Manager: 
+
+1. First [follow the steps][corespm] to add the Core XCFramework with Swift Package Mananger.
+1. Add the Google Cast package to Swift Package Manager using `https://github.com/brightcove/brightcove-player-sdk-ios-googlecast.git`.
+1. Follow the [Google Cast SDK Manual Setup][googlecastsdkmanualsetup] guide.
+
+[corespm]: https://github.com/brightcove/brightcove-player-sdk-ios#SwiftPackageManager
 
 ### Imports
 

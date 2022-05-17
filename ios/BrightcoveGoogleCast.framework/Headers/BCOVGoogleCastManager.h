@@ -142,12 +142,28 @@ NS_ASSUME_NONNULL_BEGIN
  * image that is created. Defaults to 480h x 720w
  */
 @property (nonatomic, assign) CGSize posterImageSize;
+
 /**
  * Whether to use a language variant, if available, with GCKMediaMetadata
  *
  * Defaults to YES
  */
 @property (nonatomic, assign) BOOL useLocalizedVariantForCastMediaMedadata;
+
+/**
+ * Whether to create `GCKMediaTrack` objects from the BCOVVideo's "text_tracks".
+ * DASH and HLS v3 sources will allow the Google Cast SDK to determine available
+ * VTT sources.
+ *
+ * You can enable this feature if the Google Cast SDK is not automatically finding
+ * VTT sources that should be available for your video.
+ *
+ * You can also add additional `GCKMediaTrack` options by using the `willBuildMediaInformationBuilder:`
+ * delegate method and updating the `mediaTracks` array on the `builder` object.
+ *
+ * Defaults to NO
+ */
+@property (nonatomic, assign) BOOL createMediaTracks;
 
 @end
 
