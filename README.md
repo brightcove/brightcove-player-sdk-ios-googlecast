@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.10.5.2109
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.10.6.2156
 
 ## Installation
 
@@ -150,6 +150,43 @@ The following properties are also available to set on `BCOVReceiverAppConfig` as
 * adConfigId (for use with SSAI)
 * userId (for use with analytics tracking)
 * applicationId (for use with analytics tracking)
+
+## Generic Stream Concurrency <a name="GSC"></a>
+
+Generic Stream Concurrency is supported when using the Brightcove CAF Receiver. You must create a web player that has stream concurrency enabled.
+
+At this time, there is no dedicated UI for this feature in Studio, so the JSON editor must be used. The configuration will look something like this:
+```
+  "video_cloud": {
+    "stream_concurrency": true,
+    "policy_key": "BCpk..."
+  },
+  "player": {
+    "template": {
+      "name": "single-video-template",
+      "version": "6.63.1"
+    }
+  },
+```
+
+Once you have configured your player you can specify your GSC enabled player using the `playerUrl` property on `BCOVReceiverAppConfig`:
+
+```
+receiverAppConfig.playerUrl = @"https://players.brightcove.net/.../index.min.js";
+```
+
+The following claims are required:
+* `climit`: The concurrency limit claim indicates how many watchers or streams can play at the same time.
+* `uid`: The viewer identifier is used to correlate multiple sessions to enforce Stream Concurrency
+* `sid`: [Correlator identifier](https://apis.support.brightcove.com/playback-restrictions/guides/generic-stream-concurrency.html#correlator_identifier) defines the streaming locations for a viewer.
+
+For additional information please see the [Implementation](https://apis.support.brightcove.com/playback-restrictions/guides/generic-stream-concurrency.html#Implementation) section of our Generic Stream Concurrency guide.
+
+You can then set the `authToken` property on `BCOVReceiverAppConfig` with your JWT:
+
+```
+receiverAppConfig.authToken = <jwt>
+```
 
 ## Delegate Methods
 
