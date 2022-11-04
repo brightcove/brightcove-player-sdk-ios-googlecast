@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.11.0.2264
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.11.1.2309
 
 ## Installation
 
@@ -16,7 +16,7 @@ CocoaPod Podfile example:
 source 'https://github.com/CocoaPods/Specs'
 source 'https://github.com/brightcove/BrightcoveSpecs.git'
 
-platform :ios, '11.0'
+platform :ios, '11.4'
 
 use_frameworks!
 
@@ -31,8 +31,7 @@ Installing Brightcove-Player-GoogleCast automatically installs the dependency, B
 source 'https://github.com/CocoaPods/Specs'
 source 'https://github.com/brightcove/BrightcoveSpecs.git'
 
-platform :ios, '11.0'
-
+platform :ios, '11.4'
 use_frameworks!
 
 target 'ExampleApp' do
