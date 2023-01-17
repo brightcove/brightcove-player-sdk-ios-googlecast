@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.11.2.2333
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.12.0.2391
 
 ## Installation
 
@@ -75,13 +75,13 @@ To add the Google Cast Plugin for Brightcove Player SDK to your project with Swi
 1. Add the Google Cast package to Swift Package Manager using `https://github.com/brightcove/brightcove-player-sdk-ios-googlecast.git`.
 1. Follow the [Google Cast SDK Manual Setup][googlecastsdkmanualsetup] guide.
 
-[corespm]: https://github.com/brightcove/brightcove-player-sdk-ios#SwiftPackageManager
+[corespm]: https://github.com/brightcove/brightcove-player-sdk-ios#swift-package-manager
 
 ### Imports
 
 The Google Cast Plugin for Brightcove Player SDK can be imported into code a few different ways; `@import BrightcoveGoogleCast;`, `#import <BrightcoveGoogleCast/BrightcoveGoogleCast.h>` or `#import <BrightcoveGoogleCast/[specific class].h>`. You can import the `GoogleCast` and `BrightcovePlayerSDK` modules in similar fashion.
 
-[bcovsdkmanualsetup]: https://github.com/brightcove/brightcove-player-sdk-ios#ManualInstallation
+[bcovsdkmanualsetup]: https://github.com/brightcove/brightcove-player-sdk-ios#manual-installation
 [googlecastsdkmanualsetup]: https://developers.google.com/cast/docs/ios_sender/#manual_setup 
 [cocoapods]: http://cocoapods.org
 [podspecs]: https://github.com/brightcove/BrightcoveSpecs/tree/master/Brightcove-Player-GoogleCast
@@ -150,7 +150,7 @@ The following properties are also available to set on `BCOVReceiverAppConfig` as
 * userId (for use with analytics tracking)
 * applicationId (for use with analytics tracking)
 
-## Generic Stream Concurrency <a name="GSC"></a>
+## Generic Stream Concurrency
 
 Generic Stream Concurrency is supported when using the Brightcove CAF Receiver. You must create a web player that has stream concurrency enabled.
 
