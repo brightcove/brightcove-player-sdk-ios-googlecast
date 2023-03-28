@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.12.0.2391
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.12.1.2421
 
 ## Installation
 
@@ -149,6 +149,8 @@ The following properties are also available to set on `BCOVReceiverAppConfig` as
 * adConfigId (for use with SSAI)
 * userId (for use with analytics tracking)
 * applicationId (for use with analytics tracking)
+
+**NOTE: When using the Brightcove Cast Receiver app with the Brightcove Native SDKs, you must send the `catalogParams` object via the `customData` interface. A static URL is not supported. If you are correctly utilizing the `BCOVReceiverAppConfig` class this is handled for you.**
 
 ## Generic Stream Concurrency
 
