@@ -7,7 +7,7 @@ import PackageDescription
 let BrightcovePlayerSDK = Package(
     name: "Google Cast Plugin for Brightcove Player SDK",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v13)
     ],
     products: [
         .library(
