@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.12.3.2490
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.12.4.2514
 
 ## Installation
 
