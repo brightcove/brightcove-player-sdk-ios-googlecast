@@ -44,7 +44,7 @@
 					<div class="section section-overview index-overview">
 						
 						
-						<h1>Google Cast Plugin for Brightcove Player SDK for iOS, version 6.13.3.8</h1>
+						<h1>Google Cast Plugin for Brightcove Player SDK for iOS, version 7.0.0.9</h1>
 
 <h2>Installation</h2>
 
@@ -58,45 +58,17 @@
 
 <p>CocoaPod Podfile example:</p>
 
-<p>```bash
-source &lsquo;<a href="https://github.com/CocoaPods/Specs" title="">https://github.com/CocoaPods/Specs'</a>
-source &rsquo;<a href="https://github.com/brightcove/BrightcoveSpecs.git" title="">https://github.com/brightcove/BrightcoveSpecs.git'</a></p>
+<pre><code>source 'https://github.com/CocoaPods/Specs'
+source 'https://github.com/brightcove/BrightcoveSpecs.git'
 
-<p>platform :ios, &lsquo;14.0&rsquo;</p>
+platform :ios, '14.0'
 
-<p>use_frameworks!</p>
+use_frameworks!
 
-<p>target &lsquo;ExampleApp&rsquo; do
-    pod &lsquo;Brightcove-Player-GoogleCast&rsquo;
+target 'ExampleApp' do
+    pod 'Brightcove-Player-GoogleCast'
 end
-```</p>
-
-<p>Installing Brightcove-Player-GoogleCast automatically installs the dependency, Brightcove-Player-Core. Based on your needs, you may choose to include either the dynamic Brightcove-Player-Core framework, or the static one. By default, the dynamic Core framework is installed. To choose the static Core framework, your Podfile would look something like this:</p>
-
-<p>```bash
-source &lsquo;https://github.com/CocoaPods/Specs&rsquo;
-source &lsquo;https://github.com/brightcove/BrightcoveSpecs.git&rsquo;</p>
-
-<p>platform :ios, &lsquo;14.0&rsquo;
-use_frameworks!</p>
-
-<p>target &lsquo;ExampleApp&rsquo; do
-    pod &lsquo;Brightcove-Player-GoogleCast-static&rsquo;
-end
-```</p>
-
-<p>New subspecs have been added to support <code>no-bluetooth</code> version of Google Cast SDK and XCFramework.
-The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) to be used and the second is the distribution package (Framework or XCFramework) for the plugin. Bluetooth and Framework are the default subspecs for <code>BrightcoveGoogleCast</code> plugin.</p>
-
-<p><code>bash
-  pod 'Brightcove-Player-GoogleCast'                          # Bluetooth and Framework
-  pod 'Brightcove-Player-GoogleCast/Bluetooth'                # Bluetooth and Framework
-  pod 'Brightcove-Player-GoogleCast/Bluetooth/Framework'      # Bluetooth and Framework
-  pod 'Brightcove-Player-GoogleCast/Bluetooth/XCFramework'    # Bluetooth and XCFramework
-  pod 'Brightcove-Player-GoogleCast/No-Bluetooth'             # No-Bluetooth and Framework
-  pod 'Brightcove-Player-GoogleCast/No-Bluetooth/Framework'   # No-Bluetooth and Framework
-  pod 'Brightcove-Player-GoogleCast/No-Bluetooth/XCFramework' # No-Bluetooth and XCFramework
-</code></p>
+</code></pre>
 
 <p>When updating your installation, it&rsquo;s a good idea to refresh the local copy of your BrightcoveSpecs repository to ensure you have the latest podspecs locally, just like you would update your CococaPods master repository. Use <code>pod repo update</code> to do so.</p>
 
@@ -126,14 +98,17 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 
 <ol>
 <li>First <a href="https://github.com/brightcove/brightcove-player-sdk-ios#swift-package-manager">follow the steps</a> to add the Core XCFramework with Swift Package Mananger.</li>
-<li>Add the Google Cast package to Swift Package Manager using <code>https://github.com/brightcove/brightcove-player-sdk-ios-googlecast.git</code>.</li>
+<li>Add the Google Cast package to Swift Package Manager using <a href="https://github.com/brightcove/brightcove-player-sdk-ios-googlecast.git"><code>https://github.com/brightcove/brightcove-player-sdk-ios-googlecast.git</code></a>.</li>
 <li>Follow the <a href="https://developers.google.com/cast/docs/ios_sender/#manual_setup">Google Cast SDK Manual Setup</a> guide.</li>
 </ol>
 
 
 <h3>Imports</h3>
 
-<p>The Google Cast Plugin for Brightcove Player SDK can be imported into code a few different ways; <code>@import BrightcoveGoogleCast;</code>, <code>#import &lt;BrightcoveGoogleCast/BrightcoveGoogleCast.h&gt;</code> or <code>#import &lt;BrightcoveGoogleCast/[specific class].h&gt;</code>. You can import the <code>GoogleCast</code> and <code>BrightcovePlayerSDK</code> modules in similar fashion.</p>
+<p>The Google Cast Plugin for Brightcove Player SDK can be imported using:</p>
+
+<pre><code>import BrightcoveGoogleCast
+</code></pre>
 
 <h2>Before You Begin</h2>
 
@@ -153,19 +128,19 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 
 <p>This snippet shows its basic usage.</p>
 
-<pre><code>    [1] self.googleCastManager = [BCOVGoogleCastManager new];
+<pre><code>[1] googleCastManager = BCOVGoogleCastManager()
 
-    [2] id&lt;BCOVPlaybackController&gt; playbackController = [BCOVPlayerSDKManager.sharedManager createPlaybackController];
+[2] playbackController = BCOVPlayerSDKManager.sharedManager().createPlaybackController()
 
-    [3] [playbackController addSessionConsumer:self.googleCastManager];
+[3] playbackController?.add(googleCastManager)
 </code></pre>
 
 <p>Breaking the code down into steps:</p>
 
 <ol>
-<li>Create a reference to the BCOVGoogleCastManager singleton.</li>
+<li>Create a reference to the <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> singleton.</li>
 <li>Create an instance of BCOVPlaybackController to use.</li>
-<li>Add your BCOVGoogleCastManager reference as a session consumer to your BCOVPlaybackController instance.</li>
+<li>Add your <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> reference as a session consumer to your BCOVPlaybackController instance.</li>
 </ol>
 
 
@@ -175,14 +150,14 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 
 <p>If you are using the Brightcove CAF Receiver you&rsquo;ll need to initialize these variables like this:</p>
 
-<pre><code>[1] BCOVReceiverAppConfig *receiverAppConfig = [BCOVReceiverAppConfig new];
-    receiverAppConfig.accountId = kAccountID;
-    receiverAppConfig.policyKey = kServicePolicyKey;
+<pre><code>[1] let receiverAppConfig = BCOVReceiverAppConfig()
+    receiverAppConfig.accountId = "&lt;account-id&gt;"
+    receiverAppConfig.policyKey = "&lt;policy-key&gt;"
 
-[2] self.googleCastManager = [[BCOVGoogleCastManager alloc] initForBrightcoveReceiverApp:receiverAppConfig];
+[2] googleCastManager = BCOVGoogleCastManager(forBrightcoveReceiverApp: receiverAppConfig)
 </code></pre>
 
-<p>The following properties are also available to set on <code>BCOVReceiverAppConfig</code> as needed:</p>
+<p>The following properties are also available to set on <a href="Classes/BCOVReceiverAppConfig.html"><code>BCOVReceiverAppConfig</code></a> as needed:</p>
 
 <ul>
 <li>splashScreen (for customizing the splash screen image)</li>
@@ -215,9 +190,9 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
   },
 </code></p>
 
-<p>Once you have configured your player you can specify your GSC enabled player using the <code>playerUrl</code> property on <code>BCOVReceiverAppConfig</code>:</p>
+<p>Once you have configured your player you can specify your GSC enabled player using the <code>playerUrl</code> property on <a href="Classes/BCOVReceiverAppConfig.html"><code>BCOVReceiverAppConfig</code></a>:</p>
 
-<pre><code>receiverAppConfig.playerUrl = @"https://players.brightcove.net/.../index.min.js";
+<pre><code>receiverAppConfig.playerUrl = "https://players.brightcove.net/.../index.min.js"
 </code></pre>
 
 <p>The following claims are required:
@@ -227,31 +202,31 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 
 <p>For additional information please see the <a href="https://apis.support.brightcove.com/playback-restrictions/guides/generic-stream-concurrency.html#Implementation">Implementation</a> section of our Generic Stream Concurrency guide.</p>
 
-<p>You can then set the <code>authToken</code> property on <code>BCOVReceiverAppConfig</code> with your JWT:</p>
+<p>You can then set the <code>authToken</code> property on <a href="Classes/BCOVReceiverAppConfig.html"><code>BCOVReceiverAppConfig</code></a> with your JWT:</p>
 
 <pre><code>receiverAppConfig.authToken = &lt;jwt&gt;
 </code></pre>
 
 <h2>Delegate Methods</h2>
 
-<p>BCOVGoogleCastManagerDelegate has delegate methods you can use to be notified when major cast-related events have occurred or are about to occur, for example</p>
+<p><a href="Protocols/BCOVGoogleCastManagerDelegate.html">BCOVGoogleCastManagerDelegate</a> has delegate methods you can use to be notified when major cast-related events have occurred or are about to occur, for example</p>
 
 <ul>
-<li><code>- (void)switchedToLocalPlayback:(NSTimeInterval)lastKnownStreamPosition;</code></li>
-<li><code>- (void)switchedToRemotePlayback;</code></li>
-<li><code>- (void)currentCastedVideoDidComplete;</code></li>
-<li><code>- (void)castedVideoFailedToPlay;</code></li>
-<li><code>- (void)suitableSourceNotFound;</code></li>
-<li><code>- (void)willBuildMediaInformationBuilder:(GCKMediaInformationBuilder *_Nonnull);</code></li>
-<li><code>- (void)willSendMediaLoadOptions:(GCKMediaLoadOptions *_Nonnull);</code></li>
+<li><code>func switched(toLocalPlayback lastKnownStreamPosition: TimeInterval, withError error: Error?)</code></li>
+<li><code>func switchedToRemotePlayback()</code></li>
+<li><code>func currentCastedVideoDidComplete()</code></li>
+<li><code>func castedVideoFailedToPlay()</code></li>
+<li><code>func suitableSourceNotFound()</code></li>
+<li><code>func willBuild(_ builder: GCKMediaInformationBuilder)</code></li>
+<li><code>func willSend(_ mediaLoadOptions: GCKMediaLoadOptions)</code></li>
 </ul>
 
 
 <p>For a complete list with descriptions, refer to the <a href="https://docs.brightcove.com/ios-plugins/googlecast/Protocols/BCOVGoogleCastManagerDelegate.html">BCOVGoogeCastManagerDelegate Protocol Reference</a>.</p>
 
-<p>To take advantage of these events, set a delegate on the BCOVGoogleCastManager singleton.</p>
+<p>To take advantage of these events, set a delegate on the <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> singleton.</p>
 
-<pre><code>    self.googleCastManager.delegate = self;
+<pre><code>googleCastManager.delegate = self
 </code></pre>
 
 <h2>Source Selection</h2>
@@ -277,8 +252,8 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 <p>There are two properties, in addition to the delegate property, that you can set on the <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> class. These are:</p>
 
 <ul>
-<li><code>GCKImage *fallbackPosterImage</code>: The GCKImage that will be used when there is no poster image available for a video.</li>
-<li><code>CGSize posterImageSize</code>: The height and width that you want to use for the GCKImage object image that is created. Defaults to 480h x 720w.</li>
+<li><code>fallbackPosterImage: GCKImage</code>: The GCKImage that will be used when there is no poster image available for a video.</li>
+<li><code>posterImageSize: CGSize</code>: The height and width that you want to use for the GCKImage object image that is created. Defaults to 480h x 720w.</li>
 </ul>
 
 
@@ -346,7 +321,7 @@ The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) t
 					<footer>
 						<div class="footer-copyright">
 							
-							<p class="copyright">Copyright &copy; 2024 Brightcove. All rights reserved. Updated: 2024-07-18</p>
+							<p class="copyright">Copyright &copy; 2024 Brightcove. All rights reserved. Updated: 2024-11-14</p>
 							
 							
 							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

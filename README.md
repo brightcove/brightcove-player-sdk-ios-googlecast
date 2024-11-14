@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 6.13.3.8
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 7.0.0.9
 
 ## Installation
 
@@ -23,33 +23,6 @@ use_frameworks!
 target 'ExampleApp' do
     pod 'Brightcove-Player-GoogleCast'
 end
-```
-
-Installing Brightcove-Player-GoogleCast automatically installs the dependency, Brightcove-Player-Core. Based on your needs, you may choose to include either the dynamic Brightcove-Player-Core framework, or the static one. By default, the dynamic Core framework is installed. To choose the static Core framework, your Podfile would look something like this:
-
-```bash
-source 'https://github.com/CocoaPods/Specs'
-source 'https://github.com/brightcove/BrightcoveSpecs.git'
-
-platform :ios, '14.0'
-use_frameworks!
-
-target 'ExampleApp' do
-    pod 'Brightcove-Player-GoogleCast-static'
-end
-```
-
-New subspecs have been added to support `no-bluetooth` version of Google Cast SDK and XCFramework.
-The first subspec indicates the GoogleCast version (bluetooth or no-bluetooth) to be used and the second is the distribution package (Framework or XCFramework) for the plugin. Bluetooth and Framework are the default subspecs for `BrightcoveGoogleCast` plugin.
-
-```bash
-  pod 'Brightcove-Player-GoogleCast'                          # Bluetooth and Framework
-  pod 'Brightcove-Player-GoogleCast/Bluetooth'                # Bluetooth and Framework
-  pod 'Brightcove-Player-GoogleCast/Bluetooth/Framework'      # Bluetooth and Framework
-  pod 'Brightcove-Player-GoogleCast/Bluetooth/XCFramework'    # Bluetooth and XCFramework
-  pod 'Brightcove-Player-GoogleCast/No-Bluetooth'             # No-Bluetooth and Framework
-  pod 'Brightcove-Player-GoogleCast/No-Bluetooth/Framework'   # No-Bluetooth and Framework
-  pod 'Brightcove-Player-GoogleCast/No-Bluetooth/XCFramework' # No-Bluetooth and XCFramework
 ```
 
 When updating your installation, it's a good idea to refresh the local copy of your BrightcoveSpecs repository to ensure you have the latest podspecs locally, just like you would update your CococaPods master repository. Use `pod repo update` to do so.
@@ -79,13 +52,16 @@ To add the Google Cast Plugin for Brightcove Player SDK to your project with Swi
 
 ### Imports
 
-The Google Cast Plugin for Brightcove Player SDK can be imported into code a few different ways; `@import BrightcoveGoogleCast;`, `#import <BrightcoveGoogleCast/BrightcoveGoogleCast.h>` or `#import <BrightcoveGoogleCast/[specific class].h>`. You can import the `GoogleCast` and `BrightcovePlayerSDK` modules in similar fashion.
+The Google Cast Plugin for Brightcove Player SDK can be imported using:
+
+```swift
+import BrightcoveGoogleCast
+```
 
 [bcovsdkmanualsetup]: https://github.com/brightcove/brightcove-player-sdk-ios#manual-installation
 [googlecastsdkmanualsetup]: https://developers.google.com/cast/docs/ios_sender/#manual_setup 
 [cocoapods]: http://cocoapods.org
 [podspecs]: https://github.com/brightcove/BrightcoveSpecs/tree/master/Brightcove-Player-GoogleCast
-[podspecs-static]: https://github.com/brightcove/BrightcoveSpecs/tree/master/Brightcove-Player-GoogleCast-Static
 [release]: https://github.com/brightcove/brightcove-player-sdk-ios-google-cast/releases
 
 ## Before You Begin
@@ -108,12 +84,12 @@ The BrightcoveGoogleCast plugin is a bridge between [Google Cast iOS SDK][google
 
 This snippet shows its basic usage.
 
-```
-    [1] self.googleCastManager = [BCOVGoogleCastManager new];
+```swift
+[1] googleCastManager = BCOVGoogleCastManager()
 
-    [2] id<BCOVPlaybackController> playbackController = [BCOVPlayerSDKManager.sharedManager createPlaybackController];
+[2] playbackController = BCOVPlayerSDKManager.sharedManager().createPlaybackController()
 
-    [3] [playbackController addSessionConsumer:self.googleCastManager];
+[3] playbackController?.add(googleCastManager)
 ```
 
 Breaking the code down into steps:
@@ -132,12 +108,12 @@ The application ID for the Brightcove CAF Receiver is `341387A3` and is assigned
 
 If you are using the Brightcove CAF Receiver you'll need to initialize these variables like this:
 
-```
-[1] BCOVReceiverAppConfig *receiverAppConfig = [BCOVReceiverAppConfig new];
-    receiverAppConfig.accountId = kAccountID;
-    receiverAppConfig.policyKey = kServicePolicyKey;
+```swift
+[1] let receiverAppConfig = BCOVReceiverAppConfig()
+    receiverAppConfig.accountId = "<account-id>"
+    receiverAppConfig.policyKey = "<policy-key>"
 
-[2] self.googleCastManager = [[BCOVGoogleCastManager alloc] initForBrightcoveReceiverApp:receiverAppConfig];
+[2] googleCastManager = BCOVGoogleCastManager(forBrightcoveReceiverApp: receiverAppConfig)
 ```
 
 The following properties are also available to set on `BCOVReceiverAppConfig` as needed:
@@ -157,7 +133,7 @@ The following properties are also available to set on `BCOVReceiverAppConfig` as
 Generic Stream Concurrency is supported when using the Brightcove CAF Receiver. You must create a web player that has stream concurrency enabled.
 
 At this time, there is no dedicated UI for this feature in Studio, so the JSON editor must be used. The configuration will look something like this:
-```
+```swift
   "video_cloud": {
     "stream_concurrency": true,
     "policy_key": "BCpk..."
@@ -172,8 +148,8 @@ At this time, there is no dedicated UI for this feature in Studio, so the JSON e
 
 Once you have configured your player you can specify your GSC enabled player using the `playerUrl` property on `BCOVReceiverAppConfig`:
 
-```
-receiverAppConfig.playerUrl = @"https://players.brightcove.net/.../index.min.js";
+```swift
+receiverAppConfig.playerUrl = "https://players.brightcove.net/.../index.min.js"
 ```
 
 The following claims are required:
@@ -185,7 +161,7 @@ For additional information please see the [Implementation](https://apis.support.
 
 You can then set the `authToken` property on `BCOVReceiverAppConfig` with your JWT:
 
-```
+```swift
 receiverAppConfig.authToken = <jwt>
 ```
 
@@ -193,20 +169,20 @@ receiverAppConfig.authToken = <jwt>
 
 BCOVGoogleCastManagerDelegate has delegate methods you can use to be notified when major cast-related events have occurred or are about to occur, for example
 
-* `- (void)switchedToLocalPlayback:(NSTimeInterval)lastKnownStreamPosition;`
-* `- (void)switchedToRemotePlayback;`
-* `- (void)currentCastedVideoDidComplete;`
-* `- (void)castedVideoFailedToPlay;`
-* `- (void)suitableSourceNotFound;`
-* `- (void)willBuildMediaInformationBuilder:(GCKMediaInformationBuilder *_Nonnull);`
-* `- (void)willSendMediaLoadOptions:(GCKMediaLoadOptions *_Nonnull);`
+* `func switched(toLocalPlayback lastKnownStreamPosition: TimeInterval, withError error: Error?)`
+* `func switchedToRemotePlayback()`
+* `func currentCastedVideoDidComplete()`
+* `func castedVideoFailedToPlay()`
+* `func suitableSourceNotFound()`
+* `func willBuild(_ builder: GCKMediaInformationBuilder)`
+* `func willSend(_ mediaLoadOptions: GCKMediaLoadOptions)`
 
 For a complete list with descriptions, refer to the [BCOVGoogeCastManagerDelegate Protocol Reference](https://docs.brightcove.com/ios-plugins/googlecast/Protocols/BCOVGoogleCastManagerDelegate.html).
 
 To take advantage of these events, set a delegate on the BCOVGoogleCastManager singleton. 
 
-```
-    self.googleCastManager.delegate = self;
+```swift
+googleCastManager.delegate = self
 ```
 
 ## Source Selection
@@ -228,8 +204,8 @@ Your Video Cloud account will need to be set up to support HLS v3, ensure that D
 
 There are two properties, in addition to the delegate property, that you can set on the BCOVGoogleCastManager class. These are:
 
-* `GCKImage *fallbackPosterImage`: The GCKImage that will be used when there is no poster image available for a video.
-* `CGSize posterImageSize`: The height and width that you want to use for the GCKImage object image that is created. Defaults to 480h x 720w.
+* `fallbackPosterImage: GCKImage`: The GCKImage that will be used when there is no poster image available for a video.
+* `posterImageSize: CGSize`: The height and width that you want to use for the GCKImage object image that is created. Defaults to 480h x 720w.
 
 ## Known Issues / Limitations
 
