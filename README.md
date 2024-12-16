@@ -1,4 +1,4 @@
-# Google Cast Plugin for Brightcove Player SDK for iOS, version 7.0.0.9
+# Google Cast Plugin for Brightcove Player SDK for iOS, version 7.0.1.10
 
 ## Installation
 
@@ -104,7 +104,7 @@ Breaking the code down into steps:
 
 ## Brightcove CAF Receiver
 
-The application ID for the Brightcove CAF Receiver is `341387A3` and is assigned to the constant `kBCOVCAFReceiverApplicationID`. You can verify the application ID by checking the [CAF Receiver config.json](https://players.brightcove.net/videojs-chromecast-receiver/2/config.json).
+The application ID for the Brightcove CAF Receiver is `C179578D` and is assigned to the constant `kBCOVCAFReceiverApplicationID`. You can verify the application ID by checking the [CAF Receiver config.json](https://players.brightcove.net/videojs-chromecast-receiver/3/config.json).
 
 If you are using the Brightcove CAF Receiver you'll need to initialize these variables like this:
 
