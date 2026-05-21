@@ -6,7 +6,7 @@
 	<dict>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/BrightcoveGoogleCast</key>
 		<data>
-		J9uFSP4oFIzfBsUIbxoXXEW8f78=
+		of6AFJfE88nv6o2n/aWnOxo3h+E=
 		</data>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/Headers/BCOVGoogleCastManager.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/Info.plist</key>
 		<data>
-		Lm8kfgANBE3AHAWMXXCbWGABZKc=
+		tC+SzLBsklvPWNikLngNjGdmXIc=
 		</data>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/Modules/module.modulemap</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/BrightcoveGoogleCast</key>
 		<data>
-		FPv5FjJXLCDCMH+JmMa8CRMT8YM=
+		2a15AkgWZvOHD+wK/KXrQQedXJ4=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/Headers/BCOVGoogleCastManager.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/Info.plist</key>
 		<data>
-		fStybQ4qavGeTg6D4kFN314z4+k=
+		QiSNwhSaN/cvUeQ130cdraxZnoc=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/Modules/module.modulemap</key>
 		<data>
@@ -59,11 +59,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			J9uFSP4oFIzfBsUIbxoXXEW8f78=
+			of6AFJfE88nv6o2n/aWnOxo3h+E=
 			</data>
 			<key>hash2</key>
 			<data>
-			CdYs4jdotVkVmUVZRaffoBQDbG4nO4XHfDTuFNTNGig=
+			+ZOZXcs287VnB07O1CG04Ea6E7rZi0jtwNJ8tKoTud4=
 			</data>
 		</dict>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/Headers/BCOVGoogleCastManager.h</key>
@@ -103,11 +103,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Lm8kfgANBE3AHAWMXXCbWGABZKc=
+			tC+SzLBsklvPWNikLngNjGdmXIc=
 			</data>
 			<key>hash2</key>
 			<data>
-			YYOzZkqvuw48m6+wlk+jwCB2wKygT0GvLIhPKP3ZVl4=
+			DIWKf7AWOK3pngbo1lm4oRQtqPhIv2MNaCW+XmjESEQ=
 			</data>
 		</dict>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/Modules/module.modulemap</key>
@@ -125,11 +125,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FPv5FjJXLCDCMH+JmMa8CRMT8YM=
+			2a15AkgWZvOHD+wK/KXrQQedXJ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			O7VN/A/eFA12sLLAZVE960osxHNuKrOVzI5aELg1Jfg=
+			sWAltNUmMQpGBM9X26mV4o6NqpxX7UevDCgxzPzd2xw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/Headers/BCOVGoogleCastManager.h</key>
@@ -169,11 +169,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fStybQ4qavGeTg6D4kFN314z4+k=
+			QiSNwhSaN/cvUeQ130cdraxZnoc=
 			</data>
 			<key>hash2</key>
 			<data>
-			iFKyUPhcP1Go82WInqfrVWJiOAGQ19SlPOCW3FT6AII=
+			jenXAy1DbW7oB3nMFOV7zT/jNPF286TWvgUJnd8ph3w=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/Modules/module.modulemap</key>
