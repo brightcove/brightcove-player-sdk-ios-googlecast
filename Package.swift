@@ -12,12 +12,17 @@ let BrightcovePlayerSDK = Package(
     products: [
         .library(
             name: "BrightcoveGoogleCast",
-            targets: ["BrightcoveGoogleCast"])
+            targets: ["BrightcoveGoogleCast", "BrightcoveGoogleCastDeprecationNotice"])
     ],
     targets: [
         .binaryTarget(
             name: "BrightcoveGoogleCast",
             path: "xcframework/BrightcoveGoogleCast.xcframework"
+        ),
+        .target(
+            name: "BrightcoveGoogleCastDeprecationNotice",
+            path: "DeprecationNotice",
+            exclude: ["Notice.m"]
         )
     ]
 )
