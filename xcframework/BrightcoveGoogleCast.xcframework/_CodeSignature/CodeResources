@@ -6,7 +6,7 @@
 	<dict>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/BrightcoveGoogleCast</key>
 		<data>
-		R4p9FrxMZkGrd3Z7ZKo4NF35XyQ=
+		tuY3KPvauaLGRetYf6N7A95F0Ng=
 		</data>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/Headers/BCOVGoogleCastManager.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/Info.plist</key>
 		<data>
-		Wlj/hjdqIamB+ZdBxei3deOSt3M=
+		t0sLHrZeL3Ip46Fx0DXrV3VXPSM=
 		</data>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/Modules/module.modulemap</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/BrightcoveGoogleCast</key>
 		<data>
-		GSMx9+5JFQDQW2iULteAsQUniX4=
+		fWYdQVcG9UX+L3zoEl0KmgtEOmI=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/Headers/BCOVGoogleCastManager.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/Info.plist</key>
 		<data>
-		GeVdC51GasnRh6BNb9NNqiiU6Hw=
+		pl1Fj1t/GX+TWAvF4lN5jjeOOhw=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/Modules/module.modulemap</key>
 		<data>
@@ -59,7 +59,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FtfGFd/g/vI+M0RTdphcaHrC9scZAcCT2g0bEekhjlI=
+			QemERoi33tSlxS+kXK6+6iGPEk1u/tlha8gfzw00+qk=
 			</data>
 		</dict>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/Headers/BCOVGoogleCastManager.h</key>
@@ -87,7 +87,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KS5PfCjUa6CH1+Wi7vMPKnHxgyfq0qmAlSL3WOiVapI=
+			/mLhLKTXbwRXyXqV5hEmdlxwfBsyHLTwBbFmczLcJws=
 			</data>
 		</dict>
 		<key>ios-arm64/BrightcoveGoogleCast.framework/Modules/module.modulemap</key>
@@ -101,7 +101,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pcMLq0XTq0JXTc0KXpzQLZLAu5/R5dtA8/TKRwNx7ZM=
+			C/08577tyk130kGAFaO/aQ9DPGJt8/+kiqoA8ndOwog=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/Headers/BCOVGoogleCastManager.h</key>
@@ -129,7 +129,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mPJuczezS7mTDrdFjbMgU/Nbnmxz6Wkv0kIDShMVJiI=
+			lEN7qgn/vUvOc2rKqqR8xJB1VYnBwk3n+lFxFlpCphU=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BrightcoveGoogleCast.framework/Modules/module.modulemap</key>
