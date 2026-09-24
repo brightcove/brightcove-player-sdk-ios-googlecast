@@ -61,6 +61,14 @@ NS_ASSUME_NONNULL_BEGIN
 */
 @property (nonatomic, copy, nullable) NSString *splashScreen;
 
+/**
+ * The language the receiver should render its UI in, as a BCP 47 language tag.
+ *
+ * Defaults to the device's preferred language. Set this if the app presents a
+ * language of its own rather than following the device.
+ */
+@property (nonatomic, copy, nullable) NSString *language;
+
 @end
 
 @interface BCOVGoogleCastManager (BrightcoveCastReceiver)
